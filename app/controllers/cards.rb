@@ -1,5 +1,6 @@
 # GET ===================================
-get '/card' do 
+get '/card/:id' do 
+ @deck = Deck.first                       # change to params[:id]
   erb :card
 end
 

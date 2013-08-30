@@ -1,6 +1,11 @@
 <div class="container">
 
-<h1> What's the answer?</h1>
+<h1>Deck:<%=@deck.name%></h1>
+
+<h2>Flash Card: <%=@deck.cards.find(1).question %></h2>
+
+<h3> What's the answer?</h3>
+
 <form id="card_guess" action="/card" method="POST">
 <input type="text" value="" placeholder="Enter your guess!" name="answer_attempt">
 <input type="submit" value="Guess!">
