@@ -1,10 +1,9 @@
 # GET ===================================
 
-get '/answer' do 
+# get '/answer/:id' do 
   
-
-  erb :answer
-end
+#   erb :answer
+# end
 
 # POST ==================================
 

@@ -6,7 +6,7 @@
 
 <h3> What's the answer?</h3>
 
-<form id="card_guess" action="/card" method="POST">
+<form id="card_guess" action=<%="/answer/#{@card_num}"%> method="POST">
 <input type="text" value="" placeholder="Enter your guess!" name="answer_attempt">
 <input type="submit" value="Guess!">
 </form>
