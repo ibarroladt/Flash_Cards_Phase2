@@ -7,3 +7,23 @@ helpers do
     "<em>#{text}</em>"
   end
 end
+
+
+<table>
+<!-- Our datafield titles-->
+    <tr> 
+      <th><%= Category1 %></th>
+      <th><%= Category2 %></th>
+      <th><%= Category3 %></th> 
+      <th><%= Category4 %></th> 
+    </tr>
+  <!-- Each row of user data-->
+    <% @whatever.each do |round| %>
+    <tr>
+      <td><%= round.id %></td>   
+      <td><%= round.id %></td>   
+      <td><%= round.id %></td>   
+      <td><%= round.id %></td>  
+    </tr>
+    <% end %>
+</table>

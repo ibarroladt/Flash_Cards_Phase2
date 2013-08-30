@@ -1,0 +1,10 @@
+green = verde
+red = rosso
+yellow = giallo 
+blue = azzurro 
+black = nero 
+white = bianco 
+pink = rosa 
+orange = arancione
+purple = viola
+brown = marrone 
