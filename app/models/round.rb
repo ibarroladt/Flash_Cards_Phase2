@@ -1,3 +1,4 @@
 class Round < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :decks
+  belongs_to :user, presence: true 
 end

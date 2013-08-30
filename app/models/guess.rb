@@ -1,3 +1,5 @@
 class Guess < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :guess, presence: true
+  belongs_to :user, presence: true
+  belongs_to :card, presence: true 
 end
