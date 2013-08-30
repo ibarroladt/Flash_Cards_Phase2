@@ -1,5 +1,5 @@
 class Guess < ActiveRecord::Base
-  validates :guess
+  validates :guess, presence: true
   belongs_to :round
   belongs_to :card 
 end

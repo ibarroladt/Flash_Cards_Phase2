@@ -1,9 +1,17 @@
 <div class="container">
-<h1>The answer</h1>
 
-<h2>The correct answer is: </h2>
+<p>User: <%=@user_id%></p>
+<p>Round:<%=@round_id%></p>
+<p>Deck: <%=@deck_id%></p>
+<p>Card: <%=@card_id%></p>
 
-<form id="answer" action="/answer" method="POST">
+
+<p> Your guess was <%=@guess_object.guess%>
+<p> <%=@correctness%> </p>
+<p>The correct answer is: <%=@answer%> </p>
+
+
+<form id="answer" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id.to_i+1%>" method="GET">
 <input type="submit" value="Next card">
 
 </form>

@@ -1,13 +1,18 @@
 <div class="container">
 
+<p>User: <%=@user_id%></p>
+<p>Round:<%=@round_id%></p>
+<p>Deck: <%=@deck_id%></p>
+<p>Card: <%=@card_id%></p>
+
 <h1>Deck:<%=@deck.name%></h1>
 
-<h2>Flash Card: <%=@deck.cards.find(1).question %></h2>
+<h2>Flash Card: <%=@deck.cards.find(@card_id).question %></h2>
 
 <h3> What's the answer?</h3>
 
-<form id="card_guess" action=<%="/answer/#{@card_num}"%> method="POST">
-<input type="text" value="" placeholder="Enter your guess!" name="answer_attempt">
+<form id="card_guess" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id%>/answer" method="POST">
+<input type="text" value="" placeholder="Enter your guess!" name="guess">
 <input type="submit" value="Guess!">
 </form>
 </div>
