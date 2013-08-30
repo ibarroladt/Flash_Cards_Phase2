@@ -20,14 +20,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :question, null: false 
       t.string :answer, null: false  
       t.belongs_to :deck, null: false  
-
     end 
 
     create_table :guesses do |t|
       t.string :guess
       t.belongs_to :round, null: false
       t.belongs_to :card, null: false 
-
     end 
-
+  end 
 end
