@@ -8,12 +8,12 @@ class CreateUsers < ActiveRecord::Migration
 
     create_table :rounds do |t|
       t.belongs_to :user, null: false 
-
+      t.belongs_to :deck, null: false 
+      t.timestamps
     end 
 
     create_table :decks do |t|
-      t.string :name, null: false  
-      t.belongs_to :round
+      t.string :name, null: false 
     end
 
     create_table :cards do |t|
@@ -25,7 +25,7 @@ class CreateUsers < ActiveRecord::Migration
 
     create_table :guesses do |t|
       t.string :guess
-      t.belongs_to :user, null: false
+      t.belongs_to :round, null: false
       t.belongs_to :card, null: false 
 
     end 

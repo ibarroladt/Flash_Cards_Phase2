@@ -1,4 +1,6 @@
 class Round < ActiveRecord::Base
-  has_many :decks
   belongs_to :user, presence: true 
+  belongs_to :deck, presence: true
+  has_many :guesses
+  has_many :cards, through: :decks
 end
