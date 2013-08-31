@@ -4,6 +4,7 @@
 <p>Round:<%=@round_id%></p>
 <p>Deck: <%=@deck_id%></p>
 <p>Card: <%=@card_id%></p>
+<p>Score: <%=@new_score%></p>
 
 
 <p> Your guess was <%=@guess_object.guess%>
@@ -11,7 +12,7 @@
 <p>The correct answer is: <%=@answer%> </p>
 
 
-<form id="answer" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id.to_i+1%>" method="GET">
+<form id="answer" action=<%=@action%> method="GET">
 <input type="submit" value="Next card">
 
 </form>

@@ -5,12 +5,15 @@ get '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id' do
   @deck_id = params[:deck_id]
   @card_id = params[:card_id]
   
-
-
   @deck = Deck.find(params[:deck_id])
-  # if @card_id < Card.all.length
-  @round = Round.create(:user_id => params[:user_id],:deck_id => params[:deck_id]) if @round_id == "0"
-  @round_id = @round.id  
+  
+  if @round_id == "0"
+    @round = Round.create(:user_id => params[:user_id],:deck_id => params[:deck_id],:score => 0)
+  else
+    @round = Round.find(@round_id)
+  end
+   @round_id = @round.id
+
   erb :card
 end
 
