@@ -1,18 +1,36 @@
 <div class="container">
 
-<h1>Pick a round and start playing!</h1>
-<form>
-<select name="deck select"> 
-  <% @deck.each do |deck| %>
-  <option value = "<%= deck %>"><%= deck %></option>
+
+<p>Here's the user id<%=@user_id%></p>
+<p>Here's the first deck name  <%=@all_decks.first.name%></p>
+
+<h1>Pick a deck and start playing!</h1>
+<form id="play" action="/user/<%=@user_id%>/cards" method="POST">
+<select name="deck"> 
+  <% @all_decks.each do |deck| %>
+  <option value = "<%=deck.id%>"><%= deck.name.capitalize %></option>
   <% end %>
 </select>
-<input type="submit" value="Start playing">
+  <input type="submit" value="Start playing">
 </form>
 
 
-
 <h2>User stats</h2>
+<!-- Our datafield titles-->
+  <table>
+      <tr> 
+        <th>Round Number</th>
+        <th>Deck Name</th>
+      </tr>
+    <!-- Each row of user data-->
+      <% @round.each do |round| %>
+      <tr>
+        <td><%= round.id %></td><br>
+        <%  @no = round.deck %>    
+        <td><%= Deck.find_by_id(@no).name.capitalize %> </td><br>  
+      </tr>
+      <% end %>
+  </table>
 
 </div>
 
