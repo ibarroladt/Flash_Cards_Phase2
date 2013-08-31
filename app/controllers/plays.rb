@@ -10,10 +10,10 @@ end
 
 # POST ==================================
 
-post '/play' do
+# post '/play' do
 
-  @deck_id = params[:deck]
-  redirect "/user/#{@user_id}/cards"
+#   @deck_id = params[:deck]
+#   redirect "/user/#{@user_id}/cards"
 
-end
+# end
 
