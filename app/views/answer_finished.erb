@@ -1,11 +1,11 @@
 <div class="container">
 
+<p class="answer">User: <%=@user_id%></p>
 <p class="answer">Finished Round: <%=@round_id%> </p>
 <p class="answer">Deck Name: <%=Deck.find(@deck_id).name.capitalize%> </p>
 <p class="answer">Score: <%=@score%> </p>
 
-
-<form id="answer" action="/play" method="GET">
+<form id="answer" action="/play/<%=@user_id%>" method="GET">
 <input type="submit" value="End">
 
 </form>
