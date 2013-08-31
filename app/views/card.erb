@@ -1,15 +1,20 @@
 <div class="container">
 
-<p>User: <%=@user_id%></p>
-<p>Round:<%=@round_id%></p>
-<p>Deck: <%=@deck_id%></p>
-<p>Card: <%=@card_id%></p>
+<table class="answer-table">
+  <tr>
+<td>User: <%=@user_id%></td>
+<td>Round: <%=@round_id%></td>
+<td>Deck: <%=@deck_id%></td>
+<td>Card: <%=@card_id%></td>
+<td>Score: <%=@new_score%></td>
+  </tr>
+</table>
 
-<h1>Deck:<%=@deck.name%></h1>
+<h2 class="card">Current Deck: <%=@deck.name.capitalize%></h2>
 
-<h2>Flash Card: <%=@deck.cards.find(@card_id).question %></h2>
+<h1 class="card"><%=@deck.cards.find(@card_id).question.capitalize %></h1>
 
-<h3> What's the answer?</h3>
+<!-- <h3 class="card"> What's the answer?</h3> -->
 
 <form id="card_guess" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id%>/answer" method="POST">
 <input type="text" value="" placeholder="Enter your guess!" name="guess">

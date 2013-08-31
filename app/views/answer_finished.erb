@@ -1,8 +1,8 @@
 <div class="container">
 
-<p>Finished Round: <%=@round_id%> </p>
-<p>Deck Name: <%=Deck.find(@deck_id).name%> </p>
-<p>Score: <%=@score%> </p>
+<p class="answer">Finished Round: <%=@round_id%> </p>
+<p class="answer">Deck Name: <%=Deck.find(@deck_id).name.capitalize%> </p>
+<p class="answer">Score: <%=@score%> </p>
 
 
 <form id="answer" action="/play" method="GET">

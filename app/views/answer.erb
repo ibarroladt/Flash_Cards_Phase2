@@ -1,19 +1,22 @@
 <div class="container">
 
-<p>User: <%=@user_id%></p>
-<p>Round:<%=@round_id%></p>
-<p>Deck: <%=@deck_id%></p>
-<p>Card: <%=@card_id%></p>
-<p>Score: <%=@new_score%></p>
+<table class="answer-table">
+  <tr>
+    <td>User: <%=@user_id%></td>
+    <td>Round: <%=@round_id%></td>
+    <td>Deck: <%=@deck_id%></td>
+    <td>Card: <%=@card_id%></td>
+    <td>Score: <%=@new_score%></td>
+  <tr>
+</table>
 
-
-<p> Your guess was <%=@guess_object.guess%>
-<p> <%=@correctness%> </p>
-<p>The correct answer is: <%=@answer%> </p>
+<p class="answer">Your guess was: <%=@guess_object.guess%></p>
+<p class="answer" id="correctness"> <%=@correctness%> </p>
+<p class="answer">The correct answer is: <%=@answer%> </p>
 
 
 <form id="answer" action=<%=@action%> method="GET">
-<input type="submit" value="Next card">
+<input  type="submit" value="Next card">
 
 </form>
 </div>
