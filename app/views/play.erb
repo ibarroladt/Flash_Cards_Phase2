@@ -24,9 +24,9 @@
       <!-- Each row of user data-->
         <% @round.each do |round| %>
         <tr>
-          <td class="td-play"><%= round.id %></td><br>
+          <td class="td-play"><%= round.id %></td>
           <%  @no = round.deck %>    
-          <td class="td-play"><%= Deck.find_by_id(@no).name.capitalize %> </td><br>  
+          <td class="td-play"><%= Deck.find_by_id(@no).name.capitalize %> </td> 
         </tr>
         <% end %>
     </table>
