@@ -12,14 +12,14 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajaxm.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
 <body>
   <%= yield %>
-  <form id ="logout" action="/" method="POST"
+   <form id ="logout" action="/logout" method="POST">
     <input class="logout" type="submit" value="Logout!">
   </form>
 </body>

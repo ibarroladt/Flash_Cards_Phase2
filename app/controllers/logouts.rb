@@ -1,5 +1,10 @@
 get '/logout' do 
-  sessions.clear
+  erb :logout 
+end
+
+
+post '/logout' do 
+  session.clear
   redirect to ('/')
-  erb :index 
+  erb :index
 end

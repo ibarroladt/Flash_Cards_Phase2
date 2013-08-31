@@ -27,6 +27,11 @@ h2.card {
  color: black;
 }
 
+h2.play {
+  background-color: red;
+  margin-bottom: 0px;
+}
+
 h1.card {
   text-align: center;
   color: #086DB5;
@@ -41,6 +46,8 @@ table {
 
 table.center {
   vertical-align: text-top;
+  background-color: red;
+  margin-top: 0px;
 }
 
 th {
