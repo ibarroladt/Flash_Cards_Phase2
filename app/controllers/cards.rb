@@ -19,8 +19,13 @@ end
 
 # POST ==================================
 
-# post '/card/:id' do
-#   redirect to ("/answer/#{params[:id]}")
-#   # erb :answer
-# end
+
+# Este post se puede evitar si la informacion se manda directo a 
+# el get de arriba y este es convertido en post. Habria que cambiar las formas de answer. 
+
+post '/user/:user_id/cards' do
+  @user_id = params[:user_id]
+  @deck_id = params[:deck]
+  redirect ("/user/#{@user_id}/round/0/deck/#{@deck_id}/card/1")
+end
 
