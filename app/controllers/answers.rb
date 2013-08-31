@@ -21,7 +21,7 @@ post '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id/answer' do
 
   @guess_object = Guess.create(:guess => @guess, :round_id => params[:round_id], :card_id => params[:card_id])
   @answer = Card.find(params[:card_id]).answer
-  if @guess_object.guess == @answer   
+  if @guess_object.guess.downcase == @answer.downcase  
     @correctness = "You got it right"
     @new_score = Round.find(@round_id).score + 1
     Round.find(@round_id).update_attributes(:score => @new_score)
@@ -30,7 +30,7 @@ post '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id/answer' do
     @correctness = "You got it wrong, keep trying! "
   end 
 
-  if @card_id < @deck_length
+  if @card_id < Deck.find(@deck_id).cards.first.id + @deck_length - 1
     @increase_of_card =  @card_id + 1
     @action = "/user/#{@user_id}/round/#{@round_id}/deck/#{@deck_id}/card/#{@increase_of_card}"
   else
