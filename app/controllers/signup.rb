@@ -1,5 +1,5 @@
 get '/signup' do 
-      @email = params[:new_user_email]
+    @email = params[:new_user_email]
     @password = params[:new_user_password]
   erb :signup
 end
@@ -13,14 +13,15 @@ post '/signup' do
     @check_user = User.authentication(params[:new_user_email],params[:new_user_password])
     @user_id = User.find_by(email: params[:new_user_email]).id
       if @check_user.nil?
-        return "Error - please attempt login again"
+        redirect "/error"
       else 
         session[:user_id] = @user_id  
         @session = session[:user_id]
         redirect "/play/#{@user_id}"
       end
   else
-    return "Passwords do not match."
+    redirect "/error"
+    erb :error
   end
   erb :signup
 end

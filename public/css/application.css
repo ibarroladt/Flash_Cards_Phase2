@@ -72,6 +72,17 @@ th {
   text-align: center;
 }
 
+.error { 
+  margin: 10px auto;
+  width: 600px;
+  height: 420px;
+  padding-bottom: 15px;
+  border: 1px solid;
+/*  border: 1px solid black;*/
+  text-align: center;
+  background-image: url('http://images3.wikia.nocookie.net/__cb20120902070121/thehungergames/images/3/3a/Funny-gif-hahaha-no-transformers.gif'); 
+  background-size: 100% }
+
 /*Alternate Button*/
 /*input.submitanswer{
   border:none;
@@ -84,11 +95,11 @@ input.submitanswer:hover{
   background: rgba(54,54,54,0.7);
 }
 */
-/*div.statcontainer{
+div.statcontainer{
   height: 100px;
   background:rgba(200,200,200,1);
   overflow-y: scroll;
-}*/
+}
 
 
 

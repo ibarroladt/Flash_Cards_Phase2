@@ -8,11 +8,12 @@ end
 
 post '/' do
   @check_user = User.authentication(params[:email],params[:password])
-  @user_id = User.find_by(email: params[:email]).id
 
   if @check_user.nil?
-    return "Unauthorized User"
+    redirect "/error"
+    erb :error
   else 
+    @user_id = User.find_by(email: params[:email]).id
     session[:user_id] = @check_user.id  
     @session = session[:user_id]
    
