@@ -36,7 +36,13 @@ post '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id/answer' do
   else
     @action = "/user/#{@user_id}/round/#{@round_id}/deck/#{@deck_id}/answer_finished"
   end
-  erb :answer
+
+
+  if request.xhr?
+    erb :_answer, layout: false
+  else
+    erb :answer
+  end
 end
 
 # 1 - save the guess

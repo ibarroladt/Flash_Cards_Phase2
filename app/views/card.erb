@@ -1,22 +1,24 @@
 <div class="container">
 
-<table class="answer-table">
-  <tr>
-<td>User: <%=User.find(@user_id).email%></td>
-<td>Round: <%=@round_id%></td>
-<td>Deck: <%=@deck_id%></td>
-<td>Card: <%=@card_id%></td>
-  </tr>
-</table>
+  <table class="answer-table">
+    <tr>
+  <td>User: <%=User.find(@user_id).email%></td>
+  <td>Round: <%=@round_id%></td>
+  <td>Deck: <%=@deck_id%></td>
+  <td>Card: <%=@card_id%></td>
+    </tr>
+  </table>
 
-<h2 class="card">Current Deck: <%=@deck.name.capitalize%></h2>
+  <h2 class="card">Current Deck: <%=@deck.name.capitalize%></h2>
 
-<h1 class="card"><%=@deck.cards.find(@card_id).question.capitalize %></h1>
+  <h1 class="card"><%=@deck.cards.find(@card_id).question.capitalize %></h1>
 
-<!-- <h3 class="card"> What's the answer?</h3> -->
-
-<form id="card_guess" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id%>/answer" method="POST">
-<input type="text" value="" placeholder="Enter your guess!" name="guess">
-<input type="submit" value="Guess!">
-</form>
+  <!-- <h3 class="card"> What's the answer?</h3> -->
+  
+  <div id='ajax'>
+    <form id="card_guess" action="/user/<%=@user_id%>/round/<%=@round_id%>/deck/<%=@deck_id%>/card/<%=@card_id%>/answer" method="POST">
+    <input id="guess_input" type="text" value="" placeholder="Enter your guess!" name="guess">
+    <input type="submit" value="Guess!">
+    </form>
+  </div>
 </div>
