@@ -5,7 +5,7 @@ get '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id' do
   @deck_id = params[:deck_id]
   @card_id = params[:card_id]
   
-  p @deck = Deck.find(params[:deck_id])
+  @deck = Deck.find(params[:deck_id])
   
   if @round_id == "0"
     @round = Round.create(:user_id => params[:user_id],:deck_id => params[:deck_id],:score => 0)
@@ -24,8 +24,9 @@ end
 # el get de arriba y este es convertido en post. Habria que cambiar las formas de answer. 
 
 post '/user/:user_id/cards' do
-  @user_id = params[:user_id]
-  @deck_id = params[:deck]
-  redirect ("/user/#{@user_id}/round/0/deck/#{@deck_id}/card/1")
+  @user_id = params[:user_id]                   # user id is sent through url
+  @deck_id = params[:deck]                      # deck is sent from post form
+  @first_card_id = Deck.find(@deck_id).cards.first.id
+  redirect ("/user/#{@user_id}/round/0/deck/#{@deck_id}/card/#{@first_card_id}")
 end
 
