@@ -1,7 +1,15 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('form#card_guess').submit(function(event){
+    event.preventDefault();
+    var url = $(this).attr('action');
+    var value = $(this).serialize();
+      console.log(url);
+      console.log(value);
+    $.post(url,value,function(response){          
+        $('#ajax').html(response);
+    });
+  });
 });
+
+// replace what ever inside #ajax with data you receive 
+// line 6, when it gets back it will give us data, status, and xhr request
