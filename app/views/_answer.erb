@@ -1,0 +1,7 @@
+<p class="answer">Your guess was: <%=@guess_object.guess%></p>
+<p class="answer" id="correctness"> <%=@correctness%> </p>
+<p class="answer">The correct answer is: <%=@answer%> </p>
+
+
+<form id="answer" action=<%=@action%> method="GET">
+<input  type="submit" value="Next card">
