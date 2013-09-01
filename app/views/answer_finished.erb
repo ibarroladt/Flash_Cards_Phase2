@@ -5,7 +5,7 @@
 <p class="answer">Deck Name: <%=Deck.find(@deck_id).name.capitalize%> </p>
 <p class="answer">Score: <%=@score%> </p>
 
-<form id="answer" action="/play/<%=@user_id%>" method="GET">
+<form action="/play/<%=@user_id%>" method="GET">
 <input type="submit" value="End">
 
 </form>
