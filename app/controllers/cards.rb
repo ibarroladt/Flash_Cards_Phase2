@@ -14,7 +14,12 @@ get '/user/:user_id/round/:round_id/deck/:deck_id/card/:card_id' do
   end
    @round_id = @round.id
 
-  erb :card
+  if request.xhr?
+    erb :_card_form, layout: false
+  else
+    erb :card
+  end
+
 end
 
 # POST ==================================
