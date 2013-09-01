@@ -26,10 +26,10 @@
         <%  a = 1 %>
         <% @round.each do |round| %>
         <tr>
-          <td class="td-play"><%= a %></td><br>
+          <td class="td-play"><%= a %></td>
           <%  @no = round.deck %>    
-          <td class="td-play"><%= Deck.find_by_id(@no).name.capitalize %> </td><br>
-          <td class="td-play"><%= ((Round.find(round.id).score.to_f / Deck.find(@no).cards.length.to_f) * 100).floor  %> % </td><br>
+          <td class="td-play"><%= Deck.find_by_id(@no).name.capitalize %> </td>
+          <td class="td-play"><%= ((Round.find(round.id).score.to_f / Deck.find(@no).cards.length.to_f) * 100).floor  %> % </td>
           <%a += 1 %>
         </tr>
         <% end %>

@@ -18,9 +18,12 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
-   <form id ="logout" action="/logout" method="POST">
-    <input class="logout" type="submit" value="Logout!">
-  </form>
+<%= yield %>
+  <% if session[:user_id] != nil %>
+      <form id ="logout" action="/logout" method="POST">
+          <input class="logout" type="submit" value="Logout!">
+      </form>
+ <% end %>
+  
 </body>
 </html>

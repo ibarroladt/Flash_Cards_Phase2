@@ -1,3 +1,4 @@
+enable :sessions
 # GET ===================================
 
 get '/' do
@@ -14,8 +15,7 @@ post '/' do
     erb :error
   else 
     @user_id = User.find_by(email: params[:email]).id
-    session[:user_id] = @check_user.id  
-    @session = session[:user_id]
+    session[:user_id] = @user_id  
    
     redirect "/play/#{@user_id}"
   end  
